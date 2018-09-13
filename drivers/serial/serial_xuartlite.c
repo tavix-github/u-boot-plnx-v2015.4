@@ -21,6 +21,12 @@
 #define ULITE_CONTROL_RST_TX	0x01
 #define ULITE_CONTROL_RST_RX	0x02
 
+#undef 	out_be32
+#define out_be32(a,v)	writel(v,a)
+
+#undef	in_be32
+#define in_be32(a)	readl(a)
+
 struct uartlite {
 	unsigned int rx_fifo;
 	unsigned int tx_fifo;
